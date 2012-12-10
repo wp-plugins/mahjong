@@ -13,6 +13,7 @@ Author URI: http://wordpress.1000sei.com
 // 牌数チェック機能
 // 画像サイズ指定は横向きのとか考えると無理っぽい。。
 // 説明表示モード
+// 言語国際化
 
 	/*
 	 * 麻雀クラス
@@ -392,15 +393,15 @@ Author URI: http://wordpress.1000sei.com
 			if ($is_Yoko && $is_tumi) {
 				// 明かん用積み上げ
 				$str_img_tag .= "<span class='minkantumi'>";
-				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='牌' />";
+				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='" . __( 'tile', 'mahjong' ) . "' />";
 				$str_img_tag .= "<br />";
-				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='牌' />";
+				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='" . __( 'tile', 'mahjong' ) . "' />";
 				$str_img_tag .= "</span>";
 			} else {
 				// 通常
 				//$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png'>";
 				//$str_img_tag .= "<span class='hai_side' style=\"background:url('{$str_image_url}U0.png');\">";
-				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='牌' />";
+				$str_img_tag .= "<img src='{$str_image_url}{$str_hai}{$str_from}.png' alt='" . __( 'tile', 'mahjong' ) . "' />";
 				//$str_img_tag .= "</span>";
 			}
 			// 側面画像
@@ -428,10 +429,10 @@ Author URI: http://wordpress.1000sei.com
 			$str_image_url = $this->str_image_url . $this->image_set;
 			if ($str_content_type == "t") { 
 				// ツモ
-				$str_img_tag = "<img src='{$str_image_url}_tumo0.png' alt='牌' />";
+				$str_img_tag = "<img src='{$str_image_url}_tumo0.png' alt='" . __( 'tile', 'mahjong' ) . "' />";
 			} else {
 				// ドラ
-				$str_img_tag = "<img src='{$str_image_url}_dora0.png' alt='牌' />";
+				$str_img_tag = "<img src='{$str_image_url}_dora0.png' alt='" . __( 'tile', 'mahjong' ) . "' />";
 			}
 			//
 			return $str_img_tag;
@@ -472,12 +473,16 @@ Author URI: http://wordpress.1000sei.com
 	display: inline-block;
 	padding-bottom:5px;
 	backgorund-repeat:no-repeat;
-	background-position:bottom; なぜか効かない。。 */
+	background-position:bottom;
 }
 .mahjong .code {
 	display: inline-block;
 	padding:4px;
 	line-height: 1em;
+}
+.mahjong img {
+	padding:0 !important;
+	margin:0 !important;
 }
 </style>
 <?php
@@ -499,8 +504,8 @@ Author URI: http://wordpress.1000sei.com
 		function add_menu_page_cb() {
 			// トップレベルメニュー 
 			add_menu_page(
-				'麻雀牌', // メニューが有効になった時に表示されるHTMLのページタイトル用テキスト。 
-				'麻雀牌', // 管理画面のメニュー上での表示名。 
+				__( 'mahjong tile', 'mahjong' ), // メニューが有効になった時に表示されるHTMLのページタイトル用テキスト。 
+				__( 'mahjong tile', 'mahjong' ), // 管理画面のメニュー上での表示名。 
 				'edit_themes', // このメニューページを閲覧・使用するために最低限必要なユーザーレベルまたはユーザーの種類と権限 。管理能力名（edit_themes等）で指定。
 				'my_menu_page', // メニューページのコンテンツを表示するPHPファイル。とマニュアルにあるが実態は単なるslug。 
 				array($this, 'add_menu_page_html') // メニューページにコンテンツを表示する関数。
@@ -510,18 +515,20 @@ Author URI: http://wordpress.1000sei.com
 ?>
 			<div class="wrap">
 				<?php screen_icon('edit'); ?>
-				<h2>麻雀牌</h2>
-				いまのところここで設定するような事はありません。<br />
+				<h2><?php _e( 'mahjong tile', 'mahjong' ) ?></h2>
+				<?php _e( 'Now, there are no configration.', 'mahjong' ) ?><br />
 				<a href="http://wordpress.1000sei.com/mahjong/">http://wordpress.1000sei.com/mahjong/</a><br />
-				<img src="<?php echo $this->str_image_url ?>/pukkyu.png" alt='ぷっきゅ' /><br />
+				<a href="http://profiles.wordpress.org/hirofumi-ohta/">
+				<img src="http://www.gravatar.com/avatar/aff27cd19b5ac6526a11c278d8bcd9ae" alt='<?php _e( 'pukkyu', 'mahjong' ) ?>' /><br />
+				</a>
 			</div>
 <?php
 		}
 
 	}
 
-
-
+// プラグイン用の国際化用ファイル（MOファイル）をロード
+load_plugin_textdomain('mahjong', false, basename(dirname(__FILE__)).'/languages' );
 
 $objMahjong = new Mahjong();
 

@@ -3,7 +3,9 @@ Contributors: Hirofumi Ohta
 Tags: mahjong, game
 Requires at least: 3.4
 Tested up to: 3.4.2
-Stable tag: 1.1
+Stable tag: 1.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mahjong hai plugin. 
 
@@ -11,6 +13,7 @@ Mahjong hai plugin.
 
 "Mahjong" provides shortcode to construct mahjong hai images.
 
+* [Docs](http://wordpress.1000sei.com/mahjong/)
 * [Support](http://wordpress.1000sei.com/mahjong/)
 
 == Installation ==
@@ -21,8 +24,13 @@ Mahjong hai plugin.
 == Screenshots ==
 
 1. screenshot-1.png 
+1. screenshot-2.png 
 
 == Changelog ==
+
+= 1.2 =
+* Internationalized. made pot, po and mo.
+* Fixed some bugs in css.
 
 = 1.1 =
 
