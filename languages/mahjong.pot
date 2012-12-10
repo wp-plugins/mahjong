@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mahjong\n"
+"POT-Creation-Date: 2012-12-10 13:25+0900\n"
+"PO-Revision-Date: 2012-12-10 13:31+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\pleiades\\xampp\\htdocs\\wordpress\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: wp-content\\plugins\\mahjong\n"
+
+#: wp-content\plugins\mahjong/mahjong.php:396
+#: wp-content\plugins\mahjong/mahjong.php:398
+#: wp-content\plugins\mahjong/mahjong.php:404
+#: wp-content\plugins\mahjong/mahjong.php:432
+#: wp-content\plugins\mahjong/mahjong.php:435
+msgid "tile"
+msgstr ""
+
+#: wp-content\plugins\mahjong/mahjong.php:507
+#: wp-content\plugins\mahjong/mahjong.php:508
+#: wp-content\plugins\mahjong/mahjong.php:518
+msgid "mahjong tile"
+msgstr ""
+
+#: wp-content\plugins\mahjong/mahjong.php:519
+msgid "Now, there are no configration."
+msgstr ""
+
+#: wp-content\plugins\mahjong/mahjong.php:522
+msgid "pukkyu"
+msgstr ""
