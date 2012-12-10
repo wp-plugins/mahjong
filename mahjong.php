@@ -4,7 +4,7 @@ Plugin Name: Mahjong
 Plugin URI: http://wordpress.1000sei.com/mahjong/
 Description: Mahjong hai plugin
 Author: Hirofumi Ohta
-Version: 1.3
+Version: 1.4
 Author URI: http://wordpress.1000sei.com
 */
 
